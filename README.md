@@ -1,5 +1,4 @@
-# cc_gen
-Ontology-Based Corner Case Generation in Autonomous Driving 
+# Ontology-Based Corner Case Generation in Autonomous Driving 
 
 To run the notebooks, Python 3.7 and [poetry](https://python-poetry.org) is required. For initialization, run in the project's root folder:
 ```
