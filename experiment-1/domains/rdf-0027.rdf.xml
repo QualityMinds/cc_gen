@@ -1,0 +1,1030 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="https://www.qualityminds.de/ontologies/2020/kiab/ap22/cc-gen"
+         xmlns="https://www.qualityminds.de/ontologies/2020/kiab/ap22/cc-gen#"
+         xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+         xmlns:owlr="http://www.lesfleursdunormal.fr/static/_downloads/owlready_ontology.owl#">
+
+<owl:Ontology rdf:about="https://www.qualityminds.de/ontologies/2020/kiab/ap22/cc-gen"/>
+
+<owl:ObjectProperty rdf:about="#has_direction">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:domain rdf:resource="#Entity"/>
+  <rdfs:range rdf:resource="#Direction"/>
+  <owlr:python_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">direction</owlr:python_name>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="#has_width">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:domain rdf:resource="#Entity"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  <owlr:python_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">width</owlr:python_name>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#has_height">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:domain rdf:resource="#Entity"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  <owlr:python_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">height</owlr:python_name>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#has_length">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:domain rdf:resource="#Entity"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  <owlr:python_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">length</owlr:python_name>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#has_velocity">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:domain rdf:resource="#Entity"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  <owlr:python_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">velocity</owlr:python_name>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#has_lateral_distance">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:domain rdf:resource="#Entity"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  <owlr:python_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lateral_distance</owlr:python_name>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#has_longitudinal_distance">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:domain rdf:resource="#Entity"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  <owlr:python_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">longitudinal_distance</owlr:python_name>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#has_euclidean_distance">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:domain rdf:resource="#Entity"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  <owlr:python_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">euclidean_distance</owlr:python_name>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#has_reduced_height">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:domain rdf:resource="#Entity"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  <owlr:python_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">reduced_height</owlr:python_name>
+</owl:DatatypeProperty>
+
+<owl:Class rdf:about="#Entity">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <owl:disjointWith rdf:resource="#Direction"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Car">
+  <rdfs:subClassOf rdf:resource="#Entity"/>
+  <owl:disjointWith rdf:resource="#Pedestrian"/>
+</owl:Class>
+
+<owl:Class rdf:about="#EgoCar">
+  <rdfs:subClassOf rdf:resource="#Car"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Pedestrian">
+  <rdfs:subClassOf rdf:resource="#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Direction">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf>
+    <owl:Class>
+      <owl:oneOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#north"/>
+        <rdf:Description rdf:about="#north_east"/>
+        <rdf:Description rdf:about="#east"/>
+        <rdf:Description rdf:about="#south_east"/>
+        <rdf:Description rdf:about="#south"/>
+        <rdf:Description rdf:about="#south_west"/>
+        <rdf:Description rdf:about="#west"/>
+        <rdf:Description rdf:about="#north_west"/>
+      </owl:oneOf>
+    </owl:Class>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Moving">
+  <rdfs:subClassOf rdf:resource="#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#OnTheLeft">
+  <rdfs:subClassOf rdf:resource="#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#OnTheRight">
+  <rdfs:subClassOf rdf:resource="#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Crossing">
+  <rdfs:subClassOf rdf:resource="#Entity"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="#OnTheLeft"/>
+            <owl:Restriction>
+              <owl:onProperty rdf:resource="#has_direction"/>
+              <owl:someValuesFrom>
+                <owl:Class>
+                  <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#north_east"/>
+                    <rdf:Description rdf:about="#east"/>
+                    <rdf:Description rdf:about="#south_east"/>
+                  </owl:oneOf>
+                </owl:Class>
+              </owl:someValuesFrom>
+            </owl:Restriction>
+          </owl:intersectionOf>
+        </owl:Class>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="#OnTheRight"/>
+            <owl:Restriction>
+              <owl:onProperty rdf:resource="#has_direction"/>
+              <owl:someValuesFrom>
+                <owl:Class>
+                  <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#south_west"/>
+                    <rdf:Description rdf:about="#west"/>
+                    <rdf:Description rdf:about="#north_west"/>
+                  </owl:oneOf>
+                </owl:Class>
+              </owl:someValuesFrom>
+            </owl:Restriction>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#AtRelevantLocation">
+  <rdfs:subClassOf rdf:resource="#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Occluded">
+  <rdfs:subClassOf rdf:resource="#Entity"/>
+  <owl:equivalentClass>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#has_reduced_height"/>
+      <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+    </owl:Restriction>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#MostlyOccluded">
+  <rdfs:subClassOf rdf:resource="#Occluded"/>
+</owl:Class>
+
+<owl:Class rdf:about="#CompletelyOccluded">
+  <rdfs:subClassOf rdf:resource="#Occluded"/>
+</owl:Class>
+
+<owl:Class rdf:about="#CornerCase">
+  <rdfs:subClassOf rdf:resource="#Pedestrian"/>
+  <rdfs:subClassOf rdf:resource="#AtRelevantLocation"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#Pedestrian"/>
+        <rdf:Description rdf:about="#AtRelevantLocation"/>
+        <owl:Class>
+          <owl:unionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="#Crossing"/>
+            <rdf:Description rdf:about="#Occluded"/>
+          </owl:unionOf>
+        </owl:Class>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<Direction rdf:about="#north">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</Direction>
+
+<Direction rdf:about="#north_east">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</Direction>
+
+<Direction rdf:about="#east">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</Direction>
+
+<Direction rdf:about="#south_east">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</Direction>
+
+<Direction rdf:about="#south">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</Direction>
+
+<Direction rdf:about="#south_west">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</Direction>
+
+<Direction rdf:about="#west">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</Direction>
+
+<Direction rdf:about="#north_west">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</Direction>
+
+<swrl:Imp rdf:about="#has_reduced_height_rule">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:DatavaluedPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="#has_lateral_distance"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e1"/>
+          <swrl:argument2 rdf:resource="urn:swrl#l1"/>
+        </swrl:DatavaluedPropertyAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:BuiltinAtom>
+              <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+              <swrl:arguments>
+                <rdf:Description>
+                  <rdf:first rdf:resource="urn:swrl#l1"/>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</rdf:first>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </swrl:arguments>
+            </swrl:BuiltinAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:DatavaluedPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="#has_lateral_distance"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#e2"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#l2"/>
+                </swrl:DatavaluedPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:BuiltinAtom>
+                      <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                      <swrl:arguments>
+                        <rdf:Description>
+                          <rdf:first rdf:resource="urn:swrl#l2"/>
+                          <rdf:rest>
+                            <rdf:Description>
+                              <rdf:first rdf:resource="urn:swrl#l1"/>
+                              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                          </rdf:rest>
+                        </rdf:Description>
+                      </swrl:arguments>
+                    </swrl:BuiltinAtom>
+                  </rdf:first>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first>
+                        <swrl:DatavaluedPropertyAtom>
+                          <swrl:propertyPredicate rdf:resource="#has_height"/>
+                          <swrl:argument1 rdf:resource="urn:swrl#e1"/>
+                          <swrl:argument2 rdf:resource="urn:swrl#h1"/>
+                        </swrl:DatavaluedPropertyAtom>
+                      </rdf:first>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:first>
+                            <swrl:DatavaluedPropertyAtom>
+                              <swrl:propertyPredicate rdf:resource="#has_height"/>
+                              <swrl:argument1 rdf:resource="urn:swrl#e2"/>
+                              <swrl:argument2 rdf:resource="urn:swrl#h2"/>
+                            </swrl:DatavaluedPropertyAtom>
+                          </rdf:first>
+                          <rdf:rest>
+                            <rdf:Description>
+                              <rdf:first>
+                                <swrl:BuiltinAtom>
+                                  <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#subtract"/>
+                                  <swrl:arguments>
+                                    <rdf:Description>
+                                      <rdf:first rdf:resource="urn:swrl#delta"/>
+                                      <rdf:rest>
+                                        <rdf:Description>
+                                          <rdf:first rdf:resource="urn:swrl#h2"/>
+                                          <rdf:rest>
+                                            <rdf:Description>
+                                              <rdf:first rdf:resource="urn:swrl#h1"/>
+                                              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                          </rdf:rest>
+                                        </rdf:Description>
+                                      </rdf:rest>
+                                    </rdf:Description>
+                                  </swrl:arguments>
+                                </swrl:BuiltinAtom>
+                              </rdf:first>
+                              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                          </rdf:rest>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:DatavaluedPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="#has_reduced_height"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e2"/>
+          <swrl:argument2 rdf:resource="urn:swrl#delta"/>
+        </swrl:DatavaluedPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Variable rdf:about="urn:swrl#e1"/>
+
+<swrl:Variable rdf:about="urn:swrl#l1"/>
+
+<swrl:Variable rdf:about="urn:swrl#e2"/>
+
+<swrl:Variable rdf:about="urn:swrl#l2"/>
+
+<swrl:Variable rdf:about="urn:swrl#h1"/>
+
+<swrl:Variable rdf:about="urn:swrl#h2"/>
+
+<swrl:Variable rdf:about="urn:swrl#delta"/>
+
+<swrl:Imp rdf:about="#moving_rule">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:DatavaluedPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="#has_velocity"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+          <swrl:argument2 rdf:resource="urn:swrl#v"/>
+        </swrl:DatavaluedPropertyAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:BuiltinAtom>
+              <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+              <swrl:arguments>
+                <rdf:Description>
+                  <rdf:first rdf:resource="urn:swrl#v"/>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</rdf:first>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </swrl:arguments>
+            </swrl:BuiltinAtom>
+          </rdf:first>
+          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Moving"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Variable rdf:about="urn:swrl#e"/>
+
+<swrl:Variable rdf:about="urn:swrl#v"/>
+
+<swrl:Imp rdf:about="#on_the_left_rule">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#EgoCar"/>
+          <swrl:argument1 rdf:resource="urn:swrl#x"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:DatavaluedPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#has_lateral_distance"/>
+              <swrl:argument1 rdf:resource="urn:swrl#x"/>
+              <swrl:argument2 rdf:resource="urn:swrl#ego_lat"/>
+            </swrl:DatavaluedPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:ClassAtom>
+                  <swrl:classPredicate rdf:resource="#Entity"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                </swrl:ClassAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:DatavaluedPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="#has_lateral_distance"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                      <swrl:argument2 rdf:resource="urn:swrl#l"/>
+                    </swrl:DatavaluedPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first>
+                        <swrl:BuiltinAtom>
+                          <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThan"/>
+                          <swrl:arguments>
+                            <rdf:Description>
+                              <rdf:first rdf:resource="urn:swrl#l"/>
+                              <rdf:rest>
+                                <rdf:Description>
+                                  <rdf:first rdf:resource="urn:swrl#ego_lat"/>
+                                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                </rdf:Description>
+                              </rdf:rest>
+                            </rdf:Description>
+                          </swrl:arguments>
+                        </swrl:BuiltinAtom>
+                      </rdf:first>
+                      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#OnTheLeft"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Variable rdf:about="urn:swrl#x"/>
+
+<swrl:Variable rdf:about="urn:swrl#ego_lat"/>
+
+<swrl:Variable rdf:about="urn:swrl#l"/>
+
+<swrl:Imp rdf:about="#on_the_right_rule">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#EgoCar"/>
+          <swrl:argument1 rdf:resource="urn:swrl#x"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:DatavaluedPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#has_lateral_distance"/>
+              <swrl:argument1 rdf:resource="urn:swrl#x"/>
+              <swrl:argument2 rdf:resource="urn:swrl#ego_lat"/>
+            </swrl:DatavaluedPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:ClassAtom>
+                  <swrl:classPredicate rdf:resource="#Entity"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                </swrl:ClassAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:DatavaluedPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="#has_lateral_distance"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                      <swrl:argument2 rdf:resource="urn:swrl#l"/>
+                    </swrl:DatavaluedPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first>
+                        <swrl:BuiltinAtom>
+                          <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                          <swrl:arguments>
+                            <rdf:Description>
+                              <rdf:first rdf:resource="urn:swrl#l"/>
+                              <rdf:rest>
+                                <rdf:Description>
+                                  <rdf:first rdf:resource="urn:swrl#ego_lat"/>
+                                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                </rdf:Description>
+                              </rdf:rest>
+                            </rdf:Description>
+                          </swrl:arguments>
+                        </swrl:BuiltinAtom>
+                      </rdf:first>
+                      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#OnTheRight"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp rdf:about="#at_relevant_location_long_rule">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#EgoCar"/>
+          <swrl:argument1 rdf:resource="urn:swrl#x"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:DatavaluedPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#has_length"/>
+              <swrl:argument1 rdf:resource="urn:swrl#x"/>
+              <swrl:argument2 rdf:resource="urn:swrl#l"/>
+            </swrl:DatavaluedPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:BuiltinAtom>
+                  <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#multiply"/>
+                  <swrl:arguments>
+                    <rdf:Description>
+                      <rdf:first rdf:resource="urn:swrl#l15"/>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:first rdf:resource="urn:swrl#l"/>
+                          <rdf:rest>
+                            <rdf:Description>
+                              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.5</rdf:first>
+                            </rdf:Description>
+                          </rdf:rest>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </swrl:arguments>
+                </swrl:BuiltinAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:DatavaluedPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="#has_euclidean_distance"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                      <swrl:argument2 rdf:resource="urn:swrl#d"/>
+                    </swrl:DatavaluedPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first>
+                        <swrl:BuiltinAtom>
+                          <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                          <swrl:arguments>
+                            <rdf:Description>
+                              <rdf:first rdf:resource="urn:swrl#d"/>
+                              <rdf:rest>
+                                <rdf:Description>
+                                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</rdf:first>
+                                </rdf:Description>
+                              </rdf:rest>
+                            </rdf:Description>
+                          </swrl:arguments>
+                        </swrl:BuiltinAtom>
+                      </rdf:first>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:first>
+                            <swrl:BuiltinAtom>
+                              <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThanOrEqual"/>
+                              <swrl:arguments>
+                                <rdf:Description>
+                                  <rdf:first rdf:resource="urn:swrl#d"/>
+                                  <rdf:rest>
+                                    <rdf:Description>
+                                      <rdf:first rdf:resource="urn:swrl#l15"/>
+                                      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                  </rdf:rest>
+                                </rdf:Description>
+                              </swrl:arguments>
+                            </swrl:BuiltinAtom>
+                          </rdf:first>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#AtRelevantLocation"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Variable rdf:about="urn:swrl#l15"/>
+
+<swrl:Variable rdf:about="urn:swrl#d"/>
+
+<swrl:Imp rdf:about="#mostly_occluded_rule">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Occluded"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:DatavaluedPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#has_reduced_height"/>
+              <swrl:argument1 rdf:resource="urn:swrl#e"/>
+              <swrl:argument2 rdf:resource="urn:swrl#v"/>
+            </swrl:DatavaluedPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:DatavaluedPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="#has_height"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#h"/>
+                </swrl:DatavaluedPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:BuiltinAtom>
+                      <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#multiply"/>
+                      <swrl:arguments>
+                        <rdf:Description>
+                          <rdf:first rdf:resource="urn:swrl#f"/>
+                          <rdf:rest>
+                            <rdf:Description>
+                              <rdf:first rdf:resource="urn:swrl#h"/>
+                              <rdf:rest>
+                                <rdf:Description>
+                                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.13</rdf:first>
+                                </rdf:Description>
+                              </rdf:rest>
+                            </rdf:Description>
+                          </rdf:rest>
+                        </rdf:Description>
+                      </swrl:arguments>
+                    </swrl:BuiltinAtom>
+                  </rdf:first>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first>
+                        <swrl:BuiltinAtom>
+                          <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThanOrEqual"/>
+                          <swrl:arguments>
+                            <rdf:Description>
+                              <rdf:first rdf:resource="urn:swrl#v"/>
+                              <rdf:rest>
+                                <rdf:Description>
+                                  <rdf:first rdf:resource="urn:swrl#f"/>
+                                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                </rdf:Description>
+                              </rdf:rest>
+                            </rdf:Description>
+                          </swrl:arguments>
+                        </swrl:BuiltinAtom>
+                      </rdf:first>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:first>
+                            <swrl:BuiltinAtom>
+                              <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                              <swrl:arguments>
+                                <rdf:Description>
+                                  <rdf:first rdf:resource="urn:swrl#v"/>
+                                  <rdf:rest>
+                                    <rdf:Description>
+                                      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</rdf:first>
+                                    </rdf:Description>
+                                  </rdf:rest>
+                                </rdf:Description>
+                              </swrl:arguments>
+                            </swrl:BuiltinAtom>
+                          </rdf:first>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#MostlyOccluded"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Variable rdf:about="urn:swrl#h"/>
+
+<swrl:Variable rdf:about="urn:swrl#f"/>
+
+<swrl:Imp rdf:about="#completely_occluded_rule">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Occluded"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:DatavaluedPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#has_reduced_height"/>
+              <swrl:argument1 rdf:resource="urn:swrl#e"/>
+              <swrl:argument2 rdf:resource="urn:swrl#v"/>
+            </swrl:DatavaluedPropertyAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:BuiltinAtom>
+                  <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThanOrEqual"/>
+                  <swrl:arguments>
+                    <rdf:Description>
+                      <rdf:first rdf:resource="urn:swrl#v"/>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</rdf:first>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </swrl:arguments>
+                </swrl:BuiltinAtom>
+              </rdf:first>
+              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#CompletelyOccluded"/>
+          <swrl:argument1 rdf:resource="urn:swrl#e"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<Car rdf:about="#car_0">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:type rdf:resource="#AtRelevantLocation"/>
+  <rdf:type rdf:resource="#CompletelyOccluded"/>
+  <rdf:type rdf:resource="#OnTheRight"/>
+  <has_direction rdf:resource="#north"/>
+  <has_width rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.8</has_width>
+  <has_height rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.6</has_height>
+  <has_length rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.5</has_length>
+  <has_velocity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</has_velocity>
+  <has_lateral_distance rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.5</has_lateral_distance>
+  <has_longitudinal_distance rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">-3</has_longitudinal_distance>
+  <has_euclidean_distance rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.6097722286464435</has_euclidean_distance>
+  <has_reduced_height rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">-0.1</has_reduced_height>
+</Car>
+
+<Car rdf:about="#car_1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:type rdf:resource="#AtRelevantLocation"/>
+  <rdf:type rdf:resource="#CompletelyOccluded"/>
+  <rdf:type rdf:resource="#OnTheRight"/>
+  <has_direction rdf:resource="#north"/>
+  <has_width rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.8</has_width>
+  <has_height rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.6</has_height>
+  <has_length rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.5</has_length>
+  <has_velocity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</has_velocity>
+  <has_lateral_distance rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.5</has_lateral_distance>
+  <has_longitudinal_distance rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</has_longitudinal_distance>
+  <has_euclidean_distance rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.6097722286464435</has_euclidean_distance>
+  <has_reduced_height rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">-0.1</has_reduced_height>
+</Car>
+
+<Car rdf:about="#car_2">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:type rdf:resource="#CompletelyOccluded"/>
+  <rdf:type rdf:resource="#OnTheRight"/>
+  <has_direction rdf:resource="#north"/>
+  <has_width rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.8</has_width>
+  <has_height rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.6</has_height>
+  <has_length rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.5</has_length>
+  <has_velocity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</has_velocity>
+  <has_lateral_distance rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.5</has_lateral_distance>
+  <has_longitudinal_distance rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</has_longitudinal_distance>
+  <has_euclidean_distance rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">9.656603957913983</has_euclidean_distance>
+  <has_reduced_height rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">-0.1</has_reduced_height>
+</Car>
+
+<Pedestrian rdf:about="#ped_0">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:type rdf:resource="#CornerCase"/>
+  <rdf:type rdf:resource="#Moving"/>
+  <rdf:type rdf:resource="#CompletelyOccluded"/>
+  <rdf:type rdf:resource="#OnTheRight"/>
+  <has_direction rdf:resource="#east"/>
+  <has_width rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.5</has_width>
+  <has_height rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.7</has_height>
+  <has_length rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.3</has_length>
+  <has_velocity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</has_velocity>
+  <has_lateral_distance rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.3</has_lateral_distance>
+  <has_longitudinal_distance rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">6.1</has_longitudinal_distance>
+  <has_euclidean_distance rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">6.519202405202648</has_euclidean_distance>
+  <has_reduced_height rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.0</has_reduced_height>
+</Pedestrian>
+
+<Pedestrian rdf:about="#ped_1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:type rdf:resource="#AtRelevantLocation"/>
+  <rdf:type rdf:resource="#Moving"/>
+  <rdf:type rdf:resource="#OnTheRight"/>
+  <has_direction rdf:resource="#east"/>
+  <has_width rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.5</has_width>
+  <has_height rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.7</has_height>
+  <has_length rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.3</has_length>
+  <has_velocity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</has_velocity>
+  <has_lateral_distance rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.9</has_lateral_distance>
+  <has_longitudinal_distance rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">6.1</has_longitudinal_distance>
+  <has_euclidean_distance rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">6.166036003787198</has_euclidean_distance>
+</Pedestrian>
+
+<Pedestrian rdf:about="#ped_2">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:type rdf:resource="#CornerCase"/>
+  <rdf:type rdf:resource="#Crossing"/>
+  <rdf:type rdf:resource="#Moving"/>
+  <rdf:type rdf:resource="#CompletelyOccluded"/>
+  <rdf:type rdf:resource="#OnTheRight"/>
+  <has_direction rdf:resource="#west"/>
+  <has_width rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.5</has_width>
+  <has_height rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.7</has_height>
+  <has_length rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.3</has_length>
+  <has_velocity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">13</has_velocity>
+  <has_lateral_distance rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.7</has_lateral_distance>
+  <has_longitudinal_distance rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.7</has_longitudinal_distance>
+  <has_euclidean_distance rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.071854614300467</has_euclidean_distance>
+  <has_reduced_height rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.0</has_reduced_height>
+</Pedestrian>
+
+<Pedestrian rdf:about="#ped_3">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:type rdf:resource="#Crossing"/>
+  <rdf:type rdf:resource="#Moving"/>
+  <rdf:type rdf:resource="#CompletelyOccluded"/>
+  <rdf:type rdf:resource="#MostlyOccluded"/>
+  <rdf:type rdf:resource="#OnTheRight"/>
+  <has_direction rdf:resource="#west"/>
+  <has_width rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.5</has_width>
+  <has_height rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.7</has_height>
+  <has_length rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.3</has_length>
+  <has_velocity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</has_velocity>
+  <has_lateral_distance rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.5</has_lateral_distance>
+  <has_longitudinal_distance rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5.7</has_longitudinal_distance>
+  <has_euclidean_distance rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">7.262231062146123</has_euclidean_distance>
+  <has_reduced_height rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.0</has_reduced_height>
+  <has_reduced_height rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.1</has_reduced_height>
+</Pedestrian>
+
+<EgoCar rdf:about="#ego">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:type rdf:resource="#Moving"/>
+  <has_direction rdf:resource="#north"/>
+  <has_width rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.8</has_width>
+  <has_height rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.6</has_height>
+  <has_length rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.5</has_length>
+  <has_velocity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</has_velocity>
+  <has_lateral_distance rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</has_lateral_distance>
+  <has_longitudinal_distance rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</has_longitudinal_distance>
+  <has_euclidean_distance rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.0</has_euclidean_distance>
+</EgoCar>
+
+
+</rdf:RDF>

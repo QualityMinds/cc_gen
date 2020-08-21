@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "cc_gen"
+version = "0.1.0"
+description = "ontology-based corner case generation"
+authors = ["Alexander Pohl <alexander.pohl@qualityminds.de>"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+allpairspy = "^2.5.0"
+tqdm = "^4.47.0"
+openpyxl = "^3.0.4"
+jupyterlab = "^2.1.5"
+matplotlib = "^3.2.2"
+shapely = "^1.7.0"
+owlready2 = "^0.24"
+jupyter = "^1.0.0"
+pandas = "^1.1.0"
+tabulate = "^0.8.7"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+jupyter = "^1.0.0"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
